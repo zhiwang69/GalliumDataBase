@@ -1,0 +1,170 @@
+h6 {
+    margin: 20px;
+    font-weight: 600;
+    color: #0e1726;
+    font-size: 23px;
+    letter-spacing: 0;
+}
+
+body {
+    color: #888ea8;
+    height: 100%;
+    font-size: 0.875rem;
+    background: #fafafa;
+    letter-spacing: 0.0312rem;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    overflow-x: hidden;
+    margin: 20px;
+}
+
+.loadingShader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    z-index: 9999;
+    cursor: default;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 50%;
+}
+
+@media screen and (max-width:1000px) {
+    #navbar {
+        display: none;
+    }
+}
+
+#navbar {
+    border-radius: 10px;
+    z-index: 1001;
+    width: 55px;
+    height: 100%;
+    position: fixed;
+    background: white;
+    box-shadow: 5px 0 25px 0 rgba(94, 92, 154, 0.06);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#navbar:hover {
+    width: 280px;
+}
+
+#navbar .nav-item {
+    height: 40px;
+}
+
+#navbar .nav-link {
+    color: #515365;
+    align-items: center;
+    text-decoration: none;
+    fill: #515365;
+    stroke: white;
+    stroke-width: 20;
+}
+
+#navbar .active {
+    align-items: center;
+    text-decoration: none;
+    color: #0d6efd;
+    fill: #0d6efd;
+    stroke: white;
+    stroke-width: 20;
+}
+
+#navbar .nav-link:hover {
+    color: #0d6efd;
+    fill: #0d6efd;
+    stroke: white;
+    stroke-width: 20;
+}
+
+#navbar .nav-link span {
+    display: none;
+}
+
+#navbar:hover .nav-link span {
+    display: inline;
+}
+
+#navbar ul {
+    list-style: none;
+}
+
+.searchhome {
+    border-radius: 10px;
+    z-index: 1;
+    background: white;
+    box-shadow: 5px 0 25px 0 rgba(94, 92, 154, 0.06);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 1px solid #e0e6ed;
+}
+
+.hthome {
+    border-radius: 10px;
+    z-index: 2;
+    background: white;
+    box-shadow: 5px 0 25px 0 rgba(94, 92, 154, 0.06);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 1px solid #e0e6ed;
+}
+
+.mxgraphcontainer {
+    margin-top: 20px;
+    border-radius: 10px;
+    z-index: 1;
+    background: white;
+    box-shadow: 5px 0 25px 0 rgba(94, 92, 154, 0.06);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 1px solid #e0e6ed;
+}
+
+.fireworksWebUIContainer {
+    margin-top: 20px;
+    border-radius: 10px;
+    z-index: 1;
+    background: white;
+    box-shadow: 5px 0 25px 0 rgba(94, 92, 154, 0.06);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 1px solid #e0e6ed;
+}
+
+.input-group {
+    width: calc(100% - 100px);
+    margin: 20px;
+}
+
+.form-check {
+    margin: 10px;
+    margin-left: 22px;
+    color: #0e1726;
+}
+
+.htmodules {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.infotext {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}

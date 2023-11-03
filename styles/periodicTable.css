@@ -1,0 +1,117 @@
+.periodicTable {
+    margin-top: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    background: white;
+    box-shadow: 5px 0 25px 0 rgba(94, 92, 154, 0.06);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 1px solid #e0e6ed;
+    display: grid;
+    grid-template-columns: repeat(18, 40px);
+    grid-template-rows: repeat(9, 40px);
+    grid-gap: 5px;
+    padding: 20px;
+}
+
+.element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    cursor: default;
+    border-radius: 10%;
+    /* 修改元素形状为圆形 */
+    transition: transform 0.3s;
+    /* 添加过渡效果 */
+}
+
+.pt-wildcard-button {
+    grid-column-end: span 1;
+    grid-row-end: span 1;
+    background: #fff;
+    border: 1px solid #aaa;
+    width: 40px;
+    height: 40px;
+
+}
+
+.element:not(.elementnotavailable):hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: brightness(85%);
+}
+
+.element:not(.elementnotavailable):active {
+    transform: scale(0.9);
+}
+
+.nonMetal {
+    color: black;
+    background: #8FBC8F;
+}
+
+.alkali {
+    color: black;
+    background: #FFA07A;
+}
+
+.alkaliine {
+    color: black;
+    background: #F0E68C;
+}
+
+.otherMetal {
+    color: black;
+    background: #D3D3D3;
+}
+
+.transitionMetal {
+    color: black;
+    background: #B0C4DE;
+}
+
+.lanthanoid {
+    color: black;
+    background: #FFC0CB;
+}
+
+.actinoid {
+    color: black;
+    background: #FFD700;
+}
+
+.metalloid {
+    color: black;
+    background: #BDB76B;
+}
+
+.halogen {
+    color: black;
+    background: #AFEEEE;
+}
+
+.nobelGas {
+    color: black;
+    background: #ADD8E6;
+}
+
+.unknownElement {
+    color: black;
+    background: #ccc;
+}
+
+.elementnotavailable {
+    filter: opacity(50%);
+    border: 1px solid #fff;
+}
+
+@media screen and (max-width:900px) {
+    .periodicTable {
+        display: none;
+    }
+}
