@@ -1,0 +1,3 @@
+VASP_CMD: mpirun -np 4 vasp_std
+VASP_GAMMA_CMD: mpirun -np 4 vasp_gam
+VASP_NCL_CMD: mpirun -np 4 vasp_ncl

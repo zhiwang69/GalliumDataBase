@@ -86,7 +86,7 @@ toStringListFields = ['elements', 'task_ids', 'types_of_magnetic_species', 'poss
 needSpecialTreatmentFeilds = ['composition', 'composition_reduced', 'symmetry', 'structure']
 
 username = urllib.parse.quote_plus('fpupdater')
-password = urllib.parse.quote_plus('w@ngLow5328')
+password = urllib.parse.quote_plus('pwd')
 client = pymongo.MongoClient('mongodb://%s:%s@localhost:27017/' % (username, password))
 db = client["highThroughtputDataBase"]
 collection = db["materialsDemo"]
@@ -100,7 +100,7 @@ collection = db["materialsDemo"]
 #        print(doc["material_id"], ": ", doc["formula_pretty"])
 #exit(0)
 
-with MPRester("ohCopOjiN3r4annVghRifgzr5GEBXcW9") as mpr:
+with MPRester("api") as mpr:
     docs = mpr.materials.summary.search(elements=["Ga", "O"])
     #docs = mpr.materials.summary.search(material_ids=["mp-886"])
     itemIndex = 0

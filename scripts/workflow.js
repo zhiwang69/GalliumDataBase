@@ -1,35 +1,35 @@
 $("#ddItemIO1").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemIO2").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemIO3").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemIO4").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemIO5").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemSG1").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemSG2").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemSG3").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemAB1").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemAB2").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 $("#ddItemPC1").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault(); 
 });
 
 const setDefaultEdgeStyle = (graph) => {
@@ -314,29 +314,6 @@ const functDropIO1 = function (graph, evt, cell, x, y) {
 }
 const dsIO1 = mxUtils.makeDraggable(ddItemIO1, dropGraph, functDropIO1, dragElt);
 
-/*const ddItemIO2 = document.getElementById('ddItemIO2');
-const functDropIO2 = function (graph, evt, cell, x, y) {
-  var parent = graph.getDefaultParent();
-  graph.getModel().beginUpdate();
-  try {
-    var vertexBody = graph.insertVertex(parent, null, 'moduleIO2', x, y, 240, 100, 'BodyVertex');
-    var vertexTitle = graph.insertVertex(vertexBody, null, '输入：结构（文件）', 4, 4, 232, 20, 'constituent=1;TitleVertexIO');
-    var vertexHeader1 = graph.insertVertex(vertexBody, null, '文件名', 10, 40, 50, 20, 'constituent=1;HeaderVertex');
-    var vertexHeader2 = graph.insertVertex(vertexBody, null, '百分比', 10, 70, 50, 20, 'constituent=1;HeaderVertex');
-    var vertexInput1 = graph.insertVertex(vertexBody, null, ' ', 70, 40, 160, 20, 'constituent=1;InputFilename');
-    var vertexInput2 = graph.insertVertex(vertexBody, null, ' ', 70, 70, 160, 20, 'constituent=1;InputPercent');
-    vertexTitle.setConnectable(false);
-    vertexHeader1.setConnectable(false);
-    vertexHeader2.setConnectable(false);
-    vertexInput1.setConnectable(false);
-    vertexInput2.setConnectable(false);
-  }
-  finally {
-    graph.getModel().endUpdate();
-  }
-}
-const dsIO2 = mxUtils.makeDraggable(ddItemIO2, dropGraph, functDropIO2, dragElt);*/
-
 const ddItemIO3 = document.getElementById('ddItemIO3');
 const functDropIO3 = function (graph, evt, cell, x, y) {
     var parent = graph.getDefaultParent();
@@ -563,21 +540,13 @@ const functDropPC5 = function (graph, evt, cell, x, y) {
 }
 const dsPC5 = mxUtils.makeDraggable(ddItemPC5, dropGraph, functDropPC5, dragElt);
 
-/*
-function submitWorkflow() {
-  const encoder = new mxCodec();
-  const node = encoder.encode(graph.getModel());
-  const xml = mxUtils.getPrettyXml(node);
-  mxUtils.popup(xml, true);
-}
-*/
-
 $("#fireworksWebUIRefreshButton").on("click", function (e) {
-    $('#fireworksWebUI').attr('src', $('#fireworksWebUI').attr('src'));
+    const url = "http://" + settings.fireworksinfo.address + ":" + settings.fireworksinfo.port
+    $('#fireworksWebUI').attr('src', url);
 });
 
 $("#workflowsubmit").on("click", function (e) {
-    e.preventDefault(); // 阻止默认行为
+    e.preventDefault();
 
     const encoder = new mxCodec();
     const node = encoder.encode(graph.getModel());

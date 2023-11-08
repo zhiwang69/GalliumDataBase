@@ -1,0 +1,11 @@
+host: localhost
+port: 27017
+authsource: admin
+name: fireworks
+username: atomate2user
+password: pwd
+ssl_ca_file: null
+logdir: null
+strm_lvl: INFO
+user_indices: []
+wf_user_indices: []

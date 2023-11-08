@@ -1,0 +1,14 @@
+pymongo
+urllib
+mp_api
+FireWorks
+matplotlib
+paramiko
+fabric
+requests
+flask
+flask_cors
+bson
+pymatgen
+atomate2
+jobflow

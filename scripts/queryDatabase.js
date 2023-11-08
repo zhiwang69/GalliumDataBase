@@ -13,28 +13,42 @@ function clearElementInput() {
 
 const ITEMS_PER_PAGE = 20;
 
-function renderTable(data, page) {
+function renderTable(data, page, set) {
+    const tableHead = $("#queryResultTable thead");
     const tableBody = $("#queryResultTable tbody");
     const itemCount = data.length;
     const numResultsHeader = document.getElementById("queryResultTitle");
     numResultsHeader.textContent = itemCount + ' results';
     tableBody.empty();
+    tableHead.empty();
 
     const startIndex = (page - 1) * ITEMS_PER_PAGE;
     const endIndex = Math.min(data.length, startIndex + ITEMS_PER_PAGE);
 
+    const tabletitle = $("<tr></tr>");
+    for (var key in set.data.column_on_display) {
+        tabletitle.append($("<th sortable=\"true\" scope=\"col\"></th>").text(key));
+    }
+    tableHead.append(tabletitle);
+
     for (let i = startIndex; i < endIndex; i++) {
         const doc = data[i];
         const row = $("<tr></tr>");
-        const tmp1 = (doc.energy_above_hull).toFixed(2) + " eV/atom";
-        const tmp2 = (doc.band_gap).toFixed(2) + " eV";
-        row.append($("<td></td>").text(doc.material_id));
-        row.append($("<td></td>").text(doc.formula_pretty));
-        row.append($("<td></td>").text(doc.symmetry.crystal_system));
-        row.append($("<td></td>").text(doc.symmetry.symbol));
-        row.append($("<td></td>").text(doc.nsites));
-        row.append($("<td></td>").text(tmp1));
-        row.append($("<td></td>").text(tmp2));
+        let target;
+        for (var key in set.data.column_on_display) {
+            switch(set.data.column_on_display[key]) {
+                case "symbol":
+                case "number":
+                case "point_group":
+                case "crystal_system":
+                    target = doc.symmetry[set.data.column_on_display[key]];
+                    break;
+                default:
+                    target = doc[set.data.column_on_display[key]];
+                    break;
+            }
+            row.append($("<td></td>").text(target));
+        }
         tableBody.append(row);
     }
 }
@@ -57,12 +71,13 @@ function renderPagination(totalItems, currentPage) {
 }
 
 $(document).ready(function () {
+
     $("#submit").on("click", function (e) {
 
-        e.preventDefault(); // 阻止默认行为
+        e.preventDefault();
 
-        console.log($("#ifOnlyContainTrue:checked").val())
-        console.log($("#ifOnlyContainFalse:checked").val())
+        console.log($("#ifOnlyContainTrue:checked").val());
+        console.log($("#ifOnlyContainFalse:checked").val());
 
         const input = $("#elementInput").val();
         const elements = input.split(",");
@@ -96,10 +111,11 @@ $(document).ready(function () {
 
             console.log(query);
             console.log(JSON.stringify(query));
+            const url = "http://" + settings.dbinfo.address + ":" + settings.dbinfo.port + "/search";
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost:3000/search",
+                url: url,
                 timeout : 30000,
                 data: JSON.stringify(query),
                 contentType: "application/json; charset=utf-8",
@@ -110,7 +126,7 @@ $(document).ready(function () {
                 success: function (data) {
                     console.log("Success");
                     dataCache = data;
-                    renderTable(data, 1);
+                    renderTable(data, 1, settings);
                     renderPagination(data.length, 1);
                     $("#queryResultTitle").css("color", "black");
                     $("#loading").css("display", "none");
@@ -130,13 +146,13 @@ $(document).ready(function () {
     });
 
     $("#clear").on("click", function (e) {
-        e.preventDefault(); // 阻止默认行为
+        e.preventDefault();
     });
 
     $("#pagination").on("click", ".page-link", function (e) {
         e.preventDefault();
         const pageNumber = parseInt($(this).text());
-        renderTable(dataCache, pageNumber);
+        renderTable(dataCache, pageNumber, settings);
         renderPagination(dataCache.length, pageNumber);
     });
 });

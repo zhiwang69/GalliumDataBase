@@ -76,6 +76,11 @@
         </div>
       </div>
       <div class="col-lg-11">
+        <div class="row" id="titlerow">
+          <div class="col">
+            <h2>材料基因数据库及高通量并行计算作业管理软件</h2>
+          </div>
+        </div>
         <div class="row" id="firstrow">
           <div class="col searchhome">
             <h6>数据库搜索</h6>
@@ -362,19 +367,9 @@
         </div>
         <div class="row" id="thridrow">
           <div class="col queryResultContainer">
-            <h6 id="queryResultTitle">结果</h6>
+            <h6 id="queryResultTitle">搜索结果</h6>
             <table class="table table-striped table-hover" id="queryResultTable">
-              <thead>
-                <tr>
-                  <th sortable="true" scope="col">MPID</th>
-                  <th sortable="true" scope="col">化学式</th>
-                  <th sortable="true" scope="col">晶体系统</th>
-                  <th sortable="true" scope="col">空间群</th>
-                  <th sortable="true" scope="col">晶胞原子数</th>
-                  <th sortable="true" scope="col">Energy Above Hull</th>
-                  <th sortable="true" scope="col">能隙</th>
-                </tr>
-              </thead>
+              <thead></thead>
               <tbody></tbody>
             </table>
             <nav id="pagination" aria-label="Page navigation">
@@ -386,8 +381,10 @@
       </div>
     </div>
   </div>
+  <script src="scripts/readSettings.js"></script>
   <script src="static/jquery-3.6.4.min.js"></script>
   <script src="static/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="scripts/queryDatabase.js"></script>
+  <script src="./settings.json?callback=readSettings"></script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+readSettings({
+	"dbinfo": {
+		"address": "localhost",
+		"port": "3000"
+	},
+	"data": {
+		"column_on_display": {
+			"id": "_id",
+			"化学式": "formula_pretty",
+			"晶体系统": "crystal_system",
+			"空间群": "symbol",
+			"晶胞原子数": "nsites",
+			"Energy Above Hull": "energy_above_hull",
+			"能隙": "band_gap"
+		}
+	},
+	"fireworksinfo": {
+		"address": "localhost",
+		"port": "5000"
+	}
+})	

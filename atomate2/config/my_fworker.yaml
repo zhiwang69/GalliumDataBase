@@ -1,0 +1,6 @@
+name: SemiA100
+category: ''
+query: '{}'
+env:
+    db_file: ./db.json
+    scratch_dir: ../scratch/

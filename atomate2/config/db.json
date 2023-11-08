@@ -1,0 +1,11 @@
+{
+    "host": "localhost",
+    "port": 27017,
+    "database": "highThroughtputDataBase",
+    "collection": "tasks",
+    "admin_user": "zacwang",
+    "admin_password": "pwd",
+    "readonly_user": "atomate2user",
+    "readonly_password": "pwd",
+    "aliases": {}
+}

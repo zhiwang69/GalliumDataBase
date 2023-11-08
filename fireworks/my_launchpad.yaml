@@ -1,0 +1,6 @@
+host: localhost
+port: 27017
+authsource: admin
+name: fireworks
+username: fireworkuser
+password: pwd
